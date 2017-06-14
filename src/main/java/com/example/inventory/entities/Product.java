@@ -6,6 +6,8 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Document(collection = "inventory")
 public class Product implements Comparable<Product>,Serializable
 {
@@ -14,10 +16,14 @@ public class Product implements Comparable<Product>,Serializable
 	 * 
 	 */
 	private static final long serialVersionUID = -8035622114228432714L;
+	@ApiModelProperty(notes = "The mongodb generated product ID")
 	private String code;
-    private String name;
+	@ApiModelProperty(notes = "The name of product") 
+	private String name;
+	@ApiModelProperty(notes = "The price of product") 
     private double price;
     private byte[] image;
+	@ApiModelProperty(notes = "The quantity of product") 
     private int quantity;
     
     
